@@ -79,8 +79,11 @@
 	</script>
   </head>
   <body>
-	  <div id="splash-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 transition-opacity duration-700 ease-in-out opacity-100">
-		  <svg id="splash-logo" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" viewBox="0 0 172 199" class="w-48 h-auto"> <defs>
+
+
+	  <div id="splash-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 transition-opacity ease-in-out opacity-100" style="transition-duration: 1200ms;">
+		  <svg id="splash-logo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 172 199" class="w-48 h-auto">
+			  <defs>
 				  <linearGradient id="a" x1="154.216" x2="17.135" y1="98.424" y2="98.424" gradientUnits="userSpaceOnUse"><stop stop-color="#F5C959"/><stop offset="1" stop-color="#C69A40"/></linearGradient>
 				  <linearGradient id="b" x1="192.77" x2="21.419" y1="99.017" y2="99.017" gradientUnits="userSpaceOnUse"><stop stop-color="#F5C959"/><stop offset="1" stop-color="#C69A40"/></linearGradient>
 				  <linearGradient id="c" x1="192.77" x2="21.419" y1="92.606" y2="92.606" gradientUnits="userSpaceOnUse"><stop offset=".231" stop-color="#F5C959"/><stop offset=".827" stop-color="#C69A40"/></linearGradient>
@@ -90,7 +93,8 @@
 				  <linearGradient id="g" x1="85.675" x2="85.675" y1="4.665" y2="200.103" gradientUnits="userSpaceOnUse"><stop stop-color="#FEC947"/><stop offset=".366" stop-color="#FEC947"/><stop offset=".375" stop-color="#FEC63E"/><stop offset=".667" stop-color="#FEC63E"/><stop offset=".676" stop-color="#FCCE5E"/><stop offset="1" stop-color="#FCCE5E"/></linearGradient>
 			  </defs>
 
-			  <g id="logo-buildings" class="opacity-0 transition-opacity duration-1000 ease-out">
+
+			  <g id="logo-buildings" class="opacity-0 transition-opacity ease-in-out" style="transition-duration: 2000ms;">
 				  <path fill="#C69A40" d="m31.287 69.486 16.735-13.279v66.94l-16.735 8.55v-62.21Z"/>
 				  <path fill="#F5CA5C" d="m48.022 123.147 16.735 8.55V70.214L48.022 56.208v66.939Z"/>
 				  <path fill="#C69A40" d="m67.667 49.113 18.19-15.097v86.948l-18.19 9.459v-81.31Z"/>
@@ -109,7 +113,7 @@
 				  <path fill="url(#f)" d="m85.13 31.883.727-.778.728.621v2.885l-.728-.595-.727.595v-2.728Z"/>
 			  </g>
 
-			  <g id="logo-text" class="opacity-0 transition-opacity duration-1000 ease-out">
+			  <g id="logo-text" class="opacity-0 transition-opacity ease-in-out" style="transition-duration: 2000ms;">
 				  <path fill="#FFF" d="M20.024 177.777h-7.312V147.96H0v-6.658h32.736v6.658H20.024v29.817ZM45.644 177.777h-7.287v-36.475h14.18c3.792 0 7.024 1.093 9.697 3.281 2.691 2.203 4.037 5.273 4.037 9.209 0 5.006-2.114 8.692-6.343 11.057l7.942 12.588-.21.34h-7.522l-6.815-10.838c-1.223.065-1.94.097-2.149.097h-5.53v10.741Zm5.478-30.303h-5.478v13.39h4.508c2.603 0 4.7-.624 6.29-1.871 1.608-1.264 2.411-2.949 2.411-5.055 0-2.057-.716-3.645-2.149-4.763-1.415-1.134-3.276-1.701-5.582-1.701ZM81.849 177.777h-7.313v-36.475h7.313v36.475ZM108.887 178.263c-5.749 0-10.51-1.774-14.284-5.322-3.757-3.58-5.636-8.043-5.636-13.389 0-5.217 1.879-9.656 5.636-13.317 3.791-3.629 8.623-5.443 14.494-5.443 5.836 0 10.597 1.814 14.284 5.443 3.687 3.564 5.53 7.987 5.53 13.268 0 5.233-1.878 9.68-5.635 13.341-3.722 3.613-8.518 5.419-14.389 5.419Zm12.607-18.711c0-3.532-1.18-6.416-3.539-8.651-2.358-2.285-5.364-3.427-9.016-3.427-3.564 0-6.552 1.142-8.963 3.427-2.394 2.268-3.591 5.151-3.591 8.651 0 3.402 1.197 6.261 3.59 8.578 2.394 2.317 5.382 3.475 8.964 3.475 3.547 0 6.518-1.158 8.912-3.475 2.428-2.349 3.643-5.209 3.643-8.578ZM143.287 177.777H136v-36.985h.472l26.839 23.158v-22.648h7.312v36.961h-.498l-26.838-23.134v22.648Z"/>
 				  <path fill="url(#g)" d="M.364 180.81H171.35v3.274H.364v-3.274Z"/> <path fill="#FFF" d="M37.226 198.854h-2.301v-10.978h2.301v4.9h6.415v-4.9h2.3v10.978h-2.3v-4.074h-6.415v4.074ZM57.022 199c-1.816 0-3.32-.534-4.511-1.602-1.187-1.077-1.78-2.421-1.78-4.03 0-1.57.593-2.906 1.78-4.008 1.197-1.092 2.723-1.638 4.577-1.638 1.843 0 3.346.546 4.51 1.638 1.165 1.073 1.747 2.404 1.747 3.994 0 1.575-.593 2.913-1.78 4.015-1.175 1.087-2.69 1.631-4.543 1.631Zm3.98-5.632c0-1.063-.372-1.93-1.117-2.603-.744-.688-1.694-1.032-2.847-1.032-1.125 0-2.069.344-2.83 1.032-.756.682-1.134 1.55-1.134 2.603 0 1.024.378 1.885 1.134 2.582.755.697 1.699 1.046 2.83 1.046 1.12 0 2.058-.349 2.814-1.046.767-.707 1.15-1.567 1.15-2.582ZM75.617 196.85v2.004h-7.49v-10.978h2.3v8.974h5.19ZM83.867 198.854h-3.675v-10.978h4.337c1.832 0 3.313.463 4.444 1.389 1.142.937 1.714 2.221 1.714 3.855 0 1.853-.63 3.274-1.888 4.264-1.252.98-2.896 1.47-4.933 1.47Zm.388-8.974h-1.762v6.97H83.7c3.096 0 4.643-1.219 4.643-3.657 0-1.083-.353-1.904-1.06-2.465-.7-.566-1.71-.848-3.029-.848ZM97.876 198.854h-2.309v-10.978h2.31v10.978ZM105.795 198.854h-2.301v-11.132h.149l8.475 6.97v-6.816h2.31V199h-.158l-8.475-6.963v6.817ZM125.524 194.626v-1.85h5.148v4.491c-.513.507-1.222.924-2.127 1.25-.905.322-1.912.483-3.021.483-1.821 0-3.335-.534-4.544-1.602-1.186-1.077-1.779-2.425-1.779-4.044 0-1.614.598-2.95 1.796-4.008 1.208-1.083 2.723-1.624 4.544-1.624 1.821 0 3.38.595 4.676 1.785l-1.663 1.411c-.823-.79-1.832-1.185-3.03-1.185-1.131 0-2.08.354-2.847 1.061-.756.697-1.134 1.55-1.134 2.56 0 1.033.378 1.899 1.134 2.596.756.697 1.705 1.046 2.847 1.046 1.231 0 2.235-.263 3.013-.79v-1.58h-3.013ZM135.297 190.75c0-.926.355-1.66 1.067-2.201.707-.551 1.62-.827 2.74-.827 1.517 0 2.745.495 3.683 1.485l-1.664 1.411c-.684-.619-1.379-.928-2.085-.928-.414 0-.756.095-1.027.285a.879.879 0 0 0-.397.76c0 .23.102.434.306.615.238.209.497.39.778.541.144.078.323.166.538.263.221.098.422.193.605.286l.67.299c1.788.844 2.682 1.892 2.682 3.145 0 .912-.362 1.658-1.085 2.238-.728.585-1.694.878-2.896.878-.922 0-1.766-.161-2.533-.483-.762-.322-1.388-.758-1.879-1.309l1.68-1.441c.795.839 1.716 1.258 2.765 1.258.469 0 .855-.112 1.158-.336.309-.224.464-.502.464-.834 0-.273-.157-.541-.472-.804-.32-.283-.626-.488-.919-.615a53.02 53.02 0 0 0-1.332-.629c-1.898-.829-2.847-1.848-2.847-3.057Z"/>
 			  </g>
@@ -557,38 +561,49 @@
 			const logoText = document.getElementById('logo-text');
 			const body = document.body;
 
-			// Prevent scrolling
 			body.classList.add('overflow-hidden');
 
-			const buildingFadeInDuration = 1000; // Matches duration-1000
-			const textFadeInDelay = 500;       // Text starts fading in 0.5s after buildings start
-			const textFadeInDuration = 1000;  // Matches duration-1000
+			// --- NEW TIMINGS FOR SUBTLETY ---
+			const initialPageLoadDelay = 100;         // Small delay before any animation starts
+			const buildingFadeInActualDuration = 2000; // Matches CSS: 2s
+			const textFadeInStartDelay = 1000;         // Text starts fading 1s AFTER buildings START fading.
+													  // (Buildings will be half-visible)
+			const textFadeInActualDuration = 2000;   // Matches CSS: 2s
 
-			// Total time before splash screen starts to fade out:
-			// Max(building animation time, text animation start + text animation time) + some viewing time
-			// Buildings finish at 1000ms. Text starts at 500ms, finishes at 500+1000=1500ms.
-			// So, logo is fully visible at 1500ms. Let's give 1.5s viewing time.
-			const splashVisibleDuration = 1500 + 1500; // 3 seconds total
+			// Calculate when animations finish
+			const buildingsStartTime = initialPageLoadDelay;
+			const buildingsFinishTime = buildingsStartTime + buildingFadeInActualDuration; // 100 + 2000 = 2100ms
+
+			const textStartTime = buildingsStartTime + textFadeInStartDelay; // 100 + 1000 = 1100ms
+			const textFinishTime = textStartTime + textFadeInActualDuration;   // 1100 + 2000 = 3100ms
+
+			// Logo is fully visible when the last part (text) finishes animating
+			const logoFullyAppearedTime = textFinishTime; // 3100ms
+
+			// How long the fully formed logo STAYS visible before the screen starts to fade
+			const logoViewingDuration = 2000; // Let's give it 2 full seconds (adjust as desired)
+
+			// Total duration splash is fully opaque or animating logo parts
+			const splashElementsVisibleDuration = logoFullyAppearedTime + logoViewingDuration; // 3100ms + 2000ms = 5100ms
 
 			// 1. Start building fade-in
-			// The 'opacity-0' class is on them, 'transition-opacity duration-1000' will work
-			// We need to switch them to opacity-100
-			setTimeout(() => { // Small delay to ensure styles are applied
+			setTimeout(() => {
 				if (logoBuildings) {
-					logoBuildings.classList.remove('opacity-0'); // This triggers the transition
+					logoBuildings.classList.remove('opacity-0');
 					logoBuildings.classList.add('opacity-100');
 				}
-			}, 100); // Small delay to ensure rendering before transition starts
+			}, buildingsStartTime);
 
-			// 2. Start text fade-in after a delay
+			// 2. Start text fade-in
 			setTimeout(() => {
 				if (logoText) {
 					logoText.classList.remove('opacity-0');
 					logoText.classList.add('opacity-100');
 				}
-			}, 100 + textFadeInDelay); // 100ms initial delay + textFadeInDelay
+			}, textStartTime);
 
 			// 3. Fade out entire splash screen
+			// The splash screen's own fade-out duration is 1200ms (from its CSS)
 			setTimeout(() => {
 				splashScreen.classList.remove('opacity-100');
 				splashScreen.classList.add('opacity-0');
@@ -597,7 +612,8 @@
 					splashScreen.classList.add('hidden');
 					body.classList.remove('overflow-hidden'); // Restore scroll
 				}, { once: true });
-			}, splashVisibleDuration);
+			}, splashElementsVisibleDuration); // Screen starts fading after logo parts are done + viewing time
+
 
 			document.getElementById("year").innerHTML = new Date().getFullYear();
 		});
