@@ -15,6 +15,15 @@ const { title = 'Trion Holdings' } = Astro.props;
       gtag('js', new Date());
       gtag('config', 'G-B6KCBEGBJ7');
     </script>
+    
+
+    <script>
+      // set footer year
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+      });
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
@@ -22,6 +31,200 @@ const { title = 'Trion Holdings' } = Astro.props;
     <slot name="head" />
   </head>
   <body>
+    <!-- Shared header design (top decorative SVG) -->
+    <header class="top-design">
+      <svg xmlns="http://www.w3.org/2000/svg" role="presentation" fill="none" viewBox="0 0 716 155" style="width:100%;height:auto;"><path fill="#1A1919" d="M0 .552 439.639 0 0 106.462V.552Z"/><path fill="#E3BA63" d="M0 102.049 437.433 0H716l-30.891 56.817L0 155.005v-52.956Z"/></svg>
+
+    </header>
     <slot />
+    <!-- Top-right nav toggle button (hamburger) -->
+    <button id="nav-toggle" aria-expanded="false" aria-controls="site-nav" class="absolute top-4 right-4 w-[50px] h-[50px] bg-white rounded-full shadow-lg flex items-center justify-center" style="z-index:99999;" title="Menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect class="bar bar1" y="1" width="20" height="2" rx="1" fill="currentColor"></rect>
+        <rect class="bar bar2" y="6" width="20" height="2" rx="1" fill="currentColor"></rect>
+        <rect class="bar bar3" y="11" width="20" height="2" rx="1" fill="currentColor"></rect>
+      </svg>
+    </button>
+
+    <!-- Site nav overlay (backdrop + sliding panel) -->
+    <div id="site-nav" class="fixed inset-0 hidden" style="z-index:99998;">
+      <!-- Backdrop -->
+      <button id="site-nav-backdrop" class="absolute inset-0 bg-black bg-opacity-60" aria-hidden="true"></button>
+      <!-- Sliding left panel -->
+      <aside class="absolute left-0 top-0 h-full w-80 max-w-full bg-[#0b0b0c] text-white transform -translate-x-full" role="dialog" aria-modal="true" aria-label="Site menu">
+        <div class="p-8 h-full flex flex-col justify-start">
+          <button id="site-nav-close" class="mb-6 text-white self-end" aria-label="Close menu">Close</button>
+          <nav>
+            <ul class="space-y-6 text-lg">
+              <li><a href="/" class="text-white">Home</a></li>
+              <li><a href="/about/" class="text-white">About</a></li>
+              <li><a href="/privacy" class="text-white">Privacy</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </div>
+
+
+
+
+    <div class="w-full overflow-hidden -mb-[2px]">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" role="presentation" preserveAspectRatio="none" viewBox="0 0 682 50" class="w-full aspect-[682/50]"><path fill="#1A1919" d="M0 44.796h224.176L682 0v50H0v-5.204Z"></path></svg>
+
+		</div>
+    <!-- Global footer moved from homepage -->
+    <footer class="bg-[#1A1919] text-white px-4 py-12">
+      <div class="max-width mx-auto grid grid-cols-12 gap-8 text-sm">
+
+          <!-- Phone Numbers (5 cols) -->
+          <div class="col-span-12 xs:col-span-6 sm:col-span-4 flex gap-4 items-start">
+              <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                  <svg width="20" height="20" role="presentation" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6488 14.1112C11.8347 14.1966 12.0441 14.2161 12.2425 14.1665C12.441 14.1169 12.6166 14.0012 12.7405 13.8385L13.06 13.42C13.2277 13.1964 13.4451 13.015 13.695 12.89C13.945 12.7651 14.2206 12.7 14.5 12.7H17.2C17.6774 12.7 18.1352 12.8896 18.4728 13.2272C18.8104 13.5648 19 14.0226 19 14.5V17.2C19 17.6774 18.8104 18.1352 18.4728 18.4728C18.1352 18.8104 17.6774 19 17.2 19C12.9035 19 8.78296 17.2932 5.74487 14.2551C2.70678 11.217 1 7.09651 1 2.8C1 2.32261 1.18964 1.86477 1.52721 1.52721C1.86477 1.18964 2.32261 1 2.8 1H5.5C5.97739 1 6.43523 1.18964 6.77279 1.52721C7.11036 1.86477 7.3 2.32261 7.3 2.8V5.5C7.3 5.77944 7.23494 6.05504 7.10997 6.30498C6.985 6.55492 6.80355 6.77234 6.58 6.94L6.1588 7.2559C5.99357 7.38206 5.87712 7.56153 5.82921 7.76381C5.78131 7.9661 5.8049 8.17874 5.896 8.3656C7.12601 10.8639 9.14898 12.8843 11.6488 14.1112Z" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </div>
+              <div>
+                <p>Yonkers: (914) 964-1100</p>
+                <p>New York City: (212) 245-1980</p>
+                <p>24/7 Emergency: (914) 729-1407</p>
+              </div>
+          </div>
+
+          <!-- Address 1 (4 cols) -->
+          <div class="col-span-12 xs:col-span-6 sm:col-span-4 flex gap-4 items-start">
+              <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+              <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99215 17.1448L12.3795 12.737C13.1847 11.9431 13.7294 11.0071 14.0136 9.92881C14.286 8.87425 14.286 7.81969 14.0136 6.76514C13.7294 5.68688 13.1877 4.74785 12.3884 3.94805C11.5891 3.14824 10.6506 2.60615 9.57301 2.32178C8.5191 2.04925 7.46519 2.04925 6.41129 2.32178C5.33369 2.60615 4.39524 3.14824 3.59593 3.94805C2.79662 4.74785 2.25486 5.68688 1.97066 6.76514C1.6983 7.81969 1.6983 8.87425 1.97066 9.92881C2.25486 11.0071 2.79958 11.9431 3.60481 12.737L7.99215 17.1448ZM7.99215 19.6509L2.34367 13.9989C1.31345 12.9799 0.620711 11.7713 0.265461 10.3731C-0.0897891 9.02236 -0.0897891 7.67158 0.265461 6.3208C0.620711 4.92262 1.31049 3.71107 2.33479 2.68613C3.3591 1.6612 4.56991 0.965071 5.96722 0.597754C7.31717 0.254133 8.66712 0.254133 10.0171 0.597754C11.4144 0.965071 12.6252 1.6612 13.6495 2.68613C14.6738 3.71107 15.3636 4.92262 15.7188 6.3208C16.0741 7.67158 16.0741 9.02236 15.7188 10.3731C15.3636 11.7713 14.6708 12.9799 13.6406 13.9989L7.99215 19.6509ZM7.99215 10.1243C8.31187 10.1243 8.60792 10.0443 8.88027 9.88437C9.15263 9.72441 9.36874 9.50817 9.52861 9.23564C9.68847 8.96312 9.7684 8.66689 9.7684 8.34697C9.7684 8.02705 9.68847 7.73083 9.52861 7.4583C9.36874 7.18577 9.15263 6.96953 8.88027 6.80957C8.60792 6.64961 8.31187 6.56963 7.99215 6.56963C7.67242 6.56963 7.37638 6.64961 7.10402 6.80957C6.83167 6.96953 6.61555 7.18577 6.45569 7.4583C6.29583 7.73083 6.2159 8.02705 6.2159 8.34697C6.2159 8.66689 6.29583 8.96312 6.45569 9.23564C6.61555 9.50817 6.83167 9.72441 7.10402 9.88437C7.37638 10.0443 7.67242 10.1243 7.99215 10.1243ZM7.99215 11.9017C7.3527 11.9017 6.76062 11.7417 6.2159 11.4218C5.67118 11.1019 5.23896 10.6694 4.91924 10.1243C4.59951 9.57926 4.43965 8.98385 4.43965 8.33809C4.43965 7.69232 4.59951 7.09987 4.91924 6.56074C5.23896 6.02161 5.67118 5.59209 6.2159 5.27217C6.76062 4.95225 7.3527 4.79228 7.99215 4.79228C8.6316 4.79228 9.22368 4.95225 9.7684 5.27217C10.3131 5.59209 10.7453 6.02161 11.0651 6.56074C11.3848 7.09987 11.5446 7.69232 11.5446 8.33809C11.5446 8.98385 11.3848 9.57926 11.0651 10.1243C10.7453 10.6694 10.3131 11.1019 9.7684 11.4218C9.22368 11.7417 8.6316 11.9017 7.99215 11.9017Z" fill="white"></path></svg>
+              </div>
+              <div>
+              <p>829 Midland Ave.<br>Yonkers, NY 10704</p>
+              </div>
+          </div>
+
+          <!-- Address 2 (3 cols) -->
+          <div class="col-span-12 xs:col-span-6 sm:col-span-4 flex gap-4 items-start">
+              <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+              <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99215 17.1448L12.3795 12.737C13.1847 11.9431 13.7294 11.0071 14.0136 9.92881C14.286 8.87425 14.286 7.81969 14.0136 6.76514C13.7294 5.68688 13.1877 4.74785 12.3884 3.94805C11.5891 3.14824 10.6506 2.60615 9.57301 2.32178C8.5191 2.04925 7.46519 2.04925 6.41129 2.32178C5.33369 2.60615 4.39524 3.14824 3.59593 3.94805C2.79662 4.74785 2.25486 5.68688 1.97066 6.76514C1.6983 7.81969 1.6983 8.87425 1.97066 9.92881C2.25486 11.0071 2.79958 11.9431 3.60481 12.737L7.99215 17.1448ZM7.99215 19.6509L2.34367 13.9989C1.31345 12.9799 0.620711 11.7713 0.265461 10.3731C-0.0897891 9.02236 -0.0897891 7.67158 0.265461 6.3208C0.620711 4.92262 1.31049 3.71107 2.33479 2.68613C3.3591 1.6612 4.56991 0.965071 5.96722 0.597754C7.31717 0.254133 8.66712 0.254133 10.0171 0.597754C11.4144 0.965071 12.6252 1.6612 13.6495 2.68613C14.6738 3.71107 15.3636 4.92262 15.7188 6.3208C16.0741 7.67158 16.0741 9.02236 15.7188 10.3731C15.3636 11.7713 14.6708 12.9799 13.6406 13.9989L7.99215 19.6509ZM7.99215 10.1243C8.31187 10.1243 8.60792 10.0443 8.88027 9.88437C9.15263 9.72441 9.36874 9.50817 9.52861 9.23564C9.68847 8.96312 9.7684 8.66689 9.7684 8.34697C9.7684 8.02705 9.68847 7.73083 9.52861 7.4583C9.36874 7.18577 9.15263 6.96953 8.88027 6.80957C8.60792 6.64961 8.31187 6.56963 7.99215 6.56963C7.67242 6.56963 7.37638 6.64961 7.10402 6.80957C6.83167 6.96953 6.61555 7.18577 6.45569 7.4583C6.29583 7.73083 6.2159 8.02705 6.2159 8.34697C6.2159 8.66689 6.29583 8.96312 6.45569 9.23564C6.61555 9.50817 6.83167 9.72441 7.10402 9.88437C7.37638 10.0443 7.67242 10.1243 7.99215 10.1243ZM7.99215 11.9017C7.3527 11.9017 6.76062 11.7417 6.2159 11.4218C5.67118 11.1019 5.23896 10.6694 4.91924 10.1243C4.59951 9.57926 4.43965 8.98385 4.43965 8.33809C4.43965 7.69232 4.59951 7.09987 4.91924 6.56074C5.23896 6.02161 5.67118 5.59209 6.2159 5.27217C6.76062 4.95225 7.3527 4.79228 7.99215 4.79228C8.6316 4.79228 9.22368 4.95225 9.7684 5.27217C10.3131 5.59209 10.7453 6.02161 11.0651 6.56074C11.3848 7.09987 11.5446 7.69232 11.5446 8.33809C11.5446 8.98385 11.3848 9.57926 11.0651 10.1243C10.7453 10.6694 10.3131 11.1019 9.7684 11.4218C9.22368 11.7417 8.6316 11.9017 7.99215 11.9017Z" fill="white"></path></svg>
+              </div>
+              <div>
+              <p>165 W 127th St.<br>Ste. 101<br>New York, NY 10027</p>
+              </div>
+          </div>
+
+          <!-- Bottom copyright -->
+          <div class="text-center mt-10 text-sm col-span-12">
+            <p>
+              &copy; Trion Holdings <span id="year">2025</span> | All Rights Reserved |
+              <a href="/privacy" class="underline hover:text-[#E3BA63]">Privacy Policy</a>
+            </p>
+          </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('nav-toggle');
+        var nav = document.getElementById('site-nav');
+        if (!toggle || !nav) return;
+        var aside = nav.querySelector('aside[role="dialog"]');
+        var backdrop = document.getElementById('site-nav-backdrop');
+        var closeBtn = document.getElementById('site-nav-close');
+
+        var lastFocused = null;
+
+        function getFocusableElements(container) {
+          if (!container) return [];
+          var selector = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+          return Array.prototype.slice.call(container.querySelectorAll(selector)).filter(function (el) { return el instanceof HTMLElement; });
+        }
+
+        function handleKeydown(e) {
+          if (e.key === 'Escape' || e.key === 'Esc') {
+            e.preventDefault();
+            closeNav();
+            return;
+          }
+          if (e.key === 'Tab') {
+            var focusable = getFocusableElements(aside);
+            if (focusable.length === 0) {
+              e.preventDefault();
+              return;
+            }
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+            if (e.shiftKey) {
+              if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+              }
+            } else {
+              if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+              }
+            }
+          }
+        }
+
+        function openNav() {
+          lastFocused = document.activeElement;
+          document.addEventListener('keydown', handleKeydown);
+          nav.classList.remove('hidden');
+          requestAnimationFrame(function () {
+            nav.classList.add('open');
+            var focusable = getFocusableElements(aside);
+            if (focusable.length) focusable[0].focus();
+            else if (closeBtn && typeof closeBtn.focus === 'function') closeBtn.focus();
+            else if (typeof toggle.focus === 'function') toggle.focus();
+          });
+          toggle.setAttribute('aria-expanded', 'true');
+          toggle.classList.add('open');
+        }
+
+        function cleanupAfterHide() {
+          document.removeEventListener('keydown', handleKeydown);
+          try {
+            if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+          } catch (err) {}
+          lastFocused = null;
+        }
+
+        function closeNav() {
+          var backdropEl = backdrop;
+          var asideEl = aside;
+          var backdropDone = false;
+          var asideDone = false;
+          function tryHide() {
+            if (backdropDone && asideDone) {
+              nav.classList.remove('closing');
+              nav.classList.add('hidden');
+              cleanupAfterHide();
+            }
+          }
+          function onBackdropTransition(e) {
+            if (e.propertyName === 'opacity') {
+              backdropDone = true;
+              if (backdropEl) backdropEl.removeEventListener('transitionend', onBackdropTransition);
+              tryHide();
+            }
+          }
+          function onAsideTransition(e) {
+            if (e.propertyName === 'transform') {
+              asideDone = true;
+              if (asideEl) asideEl.removeEventListener('transitionend', onAsideTransition);
+              tryHide();
+            }
+          }
+          if (backdropEl) backdropEl.addEventListener('transitionend', onBackdropTransition); else backdropDone = true;
+          if (asideEl) asideEl.addEventListener('transitionend', onAsideTransition); else asideDone = true;
+          requestAnimationFrame(function () { nav.classList.remove('open'); nav.classList.add('closing'); });
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('open');
+          setTimeout(function () { if (!nav.classList.contains('hidden')) { nav.classList.remove('closing'); nav.classList.add('hidden'); cleanupAfterHide(); } }, 600);
+        }
+
+        toggle.addEventListener('click', function () { var expanded = toggle.getAttribute('aria-expanded') === 'true'; if (expanded) closeNav(); else openNav(); });
+        if (backdrop) backdrop.addEventListener('click', closeNav);
+        if (closeBtn) closeBtn.addEventListener('click', closeNav);
+        nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+      });
+    </script>
   </body>
 </html>
