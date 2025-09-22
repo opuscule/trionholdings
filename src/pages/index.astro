@@ -1,0 +1,351 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base>
+    <main>
+        <!-- Splash Screen -->
+        <div id="splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-800 transition-opacity opacity-100" style="transition-duration: 1200ms;">
+            <!-- SVG LOGO (same as original) -->
+            <svg id="splash-logo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 172 199" class="w-48 h-auto">
+                <!-- ...existing inline svg defs and content... -->
+            </svg>
+            <div class="loading_text opacity-0 transition-opacity duration-2000 ease-in-out text-white text-center text-2xl md:text-3xl mt-8 px-4">Family Owned &amp; Operated Since 1977</div>
+        </div>
+    
+        <div class="top-design w-4/5 md:w-45/100">
+            <svg xmlns="http://www.w3.org/2000/svg" role="presentation" fill="none" viewBox="0 0 716 155" style="width:100%;height:auto;"><path fill="#1A1919" d="M0 .552 439.639 0 0 106.462V.552Z"/><path fill="#E3BA63" d="M0 102.049 437.433 0H716l-30.891 56.817L0 155.005v-52.956Z"/></svg>
+        </div>
+    
+        <section class="bg-white px-4 mb-6 md:-mb-14 xl:-mb-20 color-copy z-0" style="z-index: -1;">
+            <div class="max-width mx-auto flex flex-row flex-wrap md:flex-nowrap gap-12 items-center justify-between">
+                <div class="w-lg">
+                    <div class="w-32 mt-30 md:mt-0 flex items-center justify-center font-semibold text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="presentation" fill="none" viewBox="0 0 172 199"><path fill="#C69A40" d="m31.287 69.486 16.735-13.279v66.94l-16.735 8.55v-62.21Z"/><path fill="#F5CA5C" d="m48.022 123.147 16.735 8.55V70.214L48.022 56.208v66.939Z"/><path fill="#C69A40" d="m67.667 49.113 18.19-15.097v86.948l-18.19 9.459v-81.31Z"/><path fill="#C69A40" d="m73.124 30.44 12.733-11.704v15.233L73.124 44.93V30.44Z"/><path fill="#F5CA5C" d="M85.857 33.97 98.59 44.93V30.44L85.857 18.735v15.233Z"/><path fill="url(#a)" d="m47.112 56.935.91-.727.91.727-.183 66.576-.727-.364-.728.364-.182-66.576Z"/><path fill="#F5CA5C" d="m85.857 120.964 18.19 9.277V49.295l-18.19-15.28v86.949Z"/><path fill="#C69A40" d="m106.594 69.486 16.735-13.279v66.94l-16.735 8.55v-62.21Z"/><path fill="url(#b)" d="m85.13 19.524.727-.788.728.788v101.622l-.728-.426-.727.426V19.524Z"/><path fill="url(#c)" d="M84.402.487 85.857 0l1.456.487V20.19l-1.456-1.352-1.455 1.352V.487Z"/><path fill="#F5CA5C" d="m123.329 123.147 16.735 8.55V70.214l-16.735-14.006v66.939Z"/><path fill="url(#d)" d="M123.329 77.126h1.455v.728h-1.455v-.728Z"/><path fill="url(#e)" d="m122.419 56.935.91-.727.909.727-.181 66.576-.728-.364-.728.364-.182-66.576Z"/><path fill="#B18C3D" d="m73.124 41.837 12.733-10.732v2.91l-12.733 10.55v-2.728Z"/><path fill="#DEA940" d="m85.857 34.016 12.733 10.7V42.02L85.857 31.105v2.91Z"/><path fill="url(#f)" d="m85.13 31.883.727-.778.728.621v2.885l-.728-.595-.727.595v-2.728Z"/><path fill="#000" d="M20.024 177.777h-7.312V147.96H0v-6.658h32.736v6.658H20.024v29.817ZM45.644 177.777h-7.287v-36.475h14.18c3.792 0 7.024 1.093 9.697 3.281 2.691 2.203 4.037 5.273 4.037 9.209 0 5.006-2.114 8.692-6.343 11.057l7.942 12.588-.21.34h-7.522l-6.815-10.838c-1.223.065-1.94.097-2.149.097h-5.53v10.741Zm5.478-30.303h-5.478v13.39h4.508c2.603 0 4.7-.624 6.29-1.871 1.608-1.264 2.411-2.949 2.411-5.055 0-2.057-.716-3.645-2.149-4.763-1.415-1.134-3.276-1.701-5.582-1.701ZM81.849 177.777h-7.313v-36.475h7.313v36.475ZM108.887 178.263c-5.749 0-10.51-1.774-14.284-5.322-3.757-3.58-5.636-8.043-5.636-13.389 0-5.217 1.879-9.656 5.636-13.317 3.791-3.629 8.623-5.443 14.494-5.443 5.836 0 10.597 1.814 14.284 5.443 3.687 3.564 5.53 7.987 5.53 13.268 0 5.233-1.878 9.68-5.635 13.341-3.722 3.613-8.518 5.419-14.389 5.419Zm12.607-18.711c0-3.532-1.18-6.416-3.539-8.651-2.358-2.285-5.364-3.427-9.016-3.427-3.564 0-6.552 1.142-8.963 3.427-2.394 2.268-3.591 5.151-3.591 8.651 0 3.402 1.197 6.261 3.59 8.578 2.394 2.317 5.382 3.475 8.964 3.475 3.547 0 6.518-1.158 8.912-3.475 2.428-2.349 3.643-5.209 3.643-8.578ZM143.287 177.777H136v-36.985h.472l26.839 23.158v-22.648h7.312v36.961h-.498l-26.838-23.134v22.648Z"/><path fill="url(#g)" d="M.364 180.81H171.35v3.274H.364v-3.274Z"/><path fill="#000" d="M37.226 198.854h-2.301v-10.978h2.301v4.9h6.415v-4.9h2.3v10.978h-2.3v-4.074h-6.415v4.074ZM57.022 199c-1.816 0-3.32-.534-4.511-1.602-1.187-1.077-1.78-2.421-1.78-4.03 0-1.57.593-2.906 1.78-4.008 1.197-1.092 2.723-1.638 4.577-1.638 1.843 0 3.346.546 4.51 1.638 1.165 1.073 1.747 2.404 1.747 3.994 0 1.575-.593 2.913-1.78 4.015-1.175 1.087-2.69 1.631-4.543 1.631Zm3.98-5.632c0-1.063-.372-1.93-1.117-2.603-.744-.688-1.694-1.032-2.847-1.032-1.125 0-2.069.344-2.83 1.032-.756.682-1.134 1.55-1.134 2.603 0 1.024.378 1.885 1.134 2.582.755.697 1.699 1.046 2.83 1.046 1.12 0 2.058-.349 2.814-1.046.767-.707 1.15-1.567 1.15-2.582ZM75.617 196.85v2.004h-7.49v-10.978h2.3v8.974h5.19ZM83.867 198.854h-3.675v-10.978h4.337c1.832 0 3.313.463 4.444 1.389 1.142.937 1.714 2.221 1.714 3.855 0 1.853-.63 3.274-1.888 4.264-1.252.98-2.896 1.47-4.933 1.47Zm.388-8.974h-1.762v6.97H83.7c3.096 0 4.643-1.219 4.643-3.657 0-1.083-.353-1.904-1.06-2.465-.7-.566-1.71-.848-3.029-.848ZM97.876 198.854h-2.309v-10.978h2.31v10.978ZM105.795 198.854h-2.301v-11.132h.149l8.475 6.97v-6.816h2.31V199h-.158l-8.475-6.963v6.817ZM125.524 194.626v-1.85h5.148v4.491c-.513.507-1.222.924-2.127 1.25-.905.322-1.912.483-3.021.483-1.821 0-3.335-.534-4.544-1.602-1.186-1.077-1.779-2.425-1.779-4.044 0-1.614.598-2.95 1.796-4.008 1.208-1.083 2.723-1.624 4.544-1.624 1.821 0 3.38.595 4.676 1.785l-1.663 1.411c-.823-.79-1.832-1.185-3.03-1.185-1.131 0-2.08.354-2.847 1.061-.756.697-1.134 1.55-1.134 2.56 0 1.033.378 1.899 1.134 2.596.756.697 1.705 1.046 2.847 1.046 1.231 0 2.235-.263 3.013-.79v-1.58h-3.013ZM135.297 190.75c0-.926.355-1.66 1.067-2.201.707-.551 1.62-.827 2.74-.827 1.517 0 2.745.495 3.683 1.485l-1.664 1.411c-.684-.619-1.379-.928-2.085-.928-.414 0-.756.095-1.027.285a.879.879 0 0 0-.397.76c0 .23.102.434.306.615.238.209.497.39.778.541.144.078.323.166.538.263.221.098.422.193.605.286l.67.299c1.788.844 2.682 1.892 2.682 3.145 0 .912-.362 1.658-1.085 2.238-.728.585-1.694.878-2.896.878-.922 0-1.766-.161-2.533-.483-.762-.322-1.388-.758-1.879-1.309l1.68-1.441c.795.839 1.716 1.258 2.765 1.258.469 0 .855-.112 1.158-.336.309-.224.464-.502.464-.834 0-.273-.157-.541-.472-.804-.32-.283-.626-.488-.919-.615a53.02 53.02 0 0 0-1.332-.629c-1.898-.829-2.847-1.848-2.847-3.057Z"/><defs><linearGradient id="a" x1="154.216" x2="17.135" y1="98.424" y2="98.424" gradientUnits="userSpaceOnUse"><stop stop-color="#F5C959"/><stop offset="1" stop-color="#C69A40"/></linearGradient><linearGradient id="b" x1="192.77" x2="21.419" y1="99.017" y2="99.017" gradientUnits="userSpaceOnUse"><stop stop-color="#F5C959"/><stop offset="1" stop-color="#C69A40"/></linearGradient><linearGradient id="c" x1="192.77" x2="21.419" y1="92.606" y2="92.606" gradientUnits="userSpaceOnUse"><stop offset=".231" stop-color="#F5C959"/><stop offset=".827" stop-color="#C69A40"/></linearGradient><linearGradient id="d" x1="171.351" x2="0" y1="99.5" y2="99.5" gradientUnits="userSpaceOnUse"><stop stop-color="#F5C959"/><stop offset="1" stop-color="#C69A40"/></linearGradient><linearGradient id="e" x1="154.216" x2="17.135" y1="98.424" y2="98.424" gradientUnits="userSpaceOnUse"><stop stop-color="#F5C959"/><stop offset="1" stop-color="#C69A40"/></linearGradient><linearGradient id="f" x1="171.351" x2="0" y1="92.927" y2="92.927" gradientUnits="userSpaceOnUse"><stop stop-color="#DEA940"/><stop offset="1" stop-color="#B18C3D"/></linearGradient><linearGradient id="g" x1="85.675" x2="85.675" y1="4.665" y2="200.103" gradientUnits="userSpaceOnUse"><stop stop-color="#FEC947"/><stop offset=".366" stop-color="#FEC947"/><stop offset=".375" stop-color="#FEC63E"/><stop offset=".667" stop-color="#FEC63E"/><stop offset=".676" stop-color="#FCCE5E"/><stop offset="1" stop-color="#FCCE5E"/></linearGradient></defs></svg>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl mb-4 mt-8 md:mt-14">
+                        Diversified Investment Firm in New York
+                    </h1>
+                    <div class="w-20 h-1 bg-[#E3BA63] mb-6"></div>
+                    <p class="leading-6 text-lg mb-4">
+                        Trion focuses on investing, acquiring, or partnering with businesses that have a goal of scaling their business to the next level.
+                    </p>
+                    <p class="leading-6 text-lg">
+                        Our large network of industry professionals will be available to the business and team. Our goal will be to work together to implement a mind set of working smarter and not harder.
+                    </p>
+                </div>
+                <div class="w-full md:w-md h-1/2 md:h-full block">
+                    <img src="trion-grid.webp" alt="Diversified Investment Firm in New York" class="w-full h-auto object-cover z-0" decoding="async" width="600" height="1187" />
+                </div>
+            </div>
+        </section>
+    
+        <!-- Section Separator -->
+		<div class="w-full overflow-hidden -mb-[2px] z-1" style="z-index: 10;">
+            <svg xmlns="http://www.w3.org/2000/svg"  role="presentation" fill="none" preserveAspectRatio="none" viewBox="0 0 682 50" class="w-full aspect-[682/50]"><path fill="#1A1919" d="M0 44.796h224.176L682 0v50H0v-5.204Z"/></svg>
+        </div>
+
+
+		<section class="bg-[#1A1919] text-white px-4 py-20 z-2" style="z-index: 20;">
+            <div class=" max-width mx-auto">
+                <!-- Heading -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl">
+                        Family Owned &amp; Operated Since 1977
+                    </h2>
+                    <div class="w-20 h-1 bg-[#E3BA63] mt-4 mx-auto"></div>
+                </div>
+                <!-- Content grid -->
+                 <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Image -->
+                     <div>
+                        <img src="trion-holdings-family-owned.webp" alt="Family Photo" class="w-full object-cover" loading="lazy" decoding="async" width="840" height="556" />
+                    </div>
+                    
+                    <!-- Text Content -->
+                    <div class="space-y-6  text-white text-base leading-relaxed">
+                        <p>
+                            Throughout our 40 year history, Trion has developed a full service investment firm which benefits from in-house underwriting, property management, and asset management. Trion’s success has been driven by implementing conservative underwriting policies along with a hands on asset management approach.
+                        </p>
+                        <p>
+                            Upon acquisition we will work with the leadership team to analyze the current operational policies and procedures and offer cost saving and time management strategies that can increase the scalability and efficiency of the business.
+                        </p>
+                        <p>
+                            Trion Holding's past purchases have benefited from a range of post-acquisition enhancements including but not limited to light cosmetic upgrades, management improvements, larger projects with extensive gut renovations, complete management and rent roll overhauls, as well as property rebranding.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Separator -->
+        <div class="w-full overflow-hidden -mt-[2px]">
+			<svg xmlns="http://www.w3.org/2000/svg" role="presentation" class="w-full aspect-[1512/290]" preserveAspectRatio="none" fill="none" viewBox="0 0 1512 290"><path fill="#fff" d="M0 5h1512v285H0z"/><path fill="#E3BA63" d="m0 78 1036.5 48.5-7.5 51L0 287V78Z"/><path fill="#1A1919" d="M0 58V.5h1512v10L1280 203 0 81V58Z"/></svg>
+		</div>
+
+
+
+		<section class="px-4 py-16 bg-white color-copy font-['Hanken_Grotesk',sans-serif]">
+			<div class=" max-width mx-auto text-center">
+				<h2 class="text-3xl sm:text-4xl mb-4">
+				Investment &amp; Acquisition Partners
+				</h2>
+				<div class="w-20 h-1 mx-auto bg-[#E3BA63] mb-6"></div>
+				<p class="max-w-2xl mx-auto text-lg">
+				We've built strong relationships with industry leaders across multiple sectors to provide comprehensive support for our portfolio companies.
+				</p>
+
+				<div class="mt-12 flex flex-row flex-wrap sm:flex-nowrap space-x-4 justify-center">
+					<div class="flex h-22 xs:basis-1/3 w-100 md:basis-1/5 items-center justify-center rounded-lg bg-orange-50 mb-4">
+						<img src="thetacoproject-logo.webp" alt="The Taco Project" class="object-contain" loading="lazy" decoding="async" width="72" height="70" />
+					</div>
+					<div class="flex h-22 xs:basis-1/3 px-4 w-100 md:basis-1/5 items-center justify-center rounded-lg bg-orange-50 mb-4">
+						<img src="april-marin-logo.webp" alt="April Marin" class="object-contain" loading="lazy" decoding="async" width="146" height="51" />
+					</div>
+					<div class="flex h-22 xs:basis-1/3 px-4 w-100 md:basis-1/5 items-center justify-center rounded-lg bg-orange-50 mb-4">
+						<img src="airbnb-logo.webp" alt="Airbnb" class="object-contain" loading="lazy" decoding="async" width="162" height="108" />
+					</div>
+					<div class="flex h-22 xs:basis-1/3 px-4 w-100 md:basis-1/5 items-center justify-center rounded-lg bg-orange-50 mb-4">
+						<img src="gipper-logo.webp" alt="Gipper" class="object-contain" loading="lazy" decoding="async" width="149" height="40" />
+					</div>
+					<div class="flex h-22 xs:basis-1/3 px-4 w-100 md:basis-1/5 items-center justify-center rounded-lg bg-orange-50 mb-4">
+						<img src="credready-logo.webp" alt="CredReady" class="object-contain" loading="lazy" decoding="async" width="146" height="45" />
+					</div>
+				</div>
+            </div>
+		</section>
+
+		<!-- Section Separator -->
+		<div class="w-full bg-[#1A19190D] overflow-hidden">
+			<svg xmlns="http://www.w3.org/2000/svg" role="presentation" preserveAspectRatio="none" fill="none" viewBox="0 0 1512 78" class="w-full aspect-[1512/78]"><path fill="white" d="M0 0h1512L0 78V0Z"/></svg>
+		</div>
+        
+        <section class="bg-[#1A19190D] px-4 py-20">
+            <div class=" max-width mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left column -->
+                <div>
+                    <h2 class="text-3xl sm:text-4xl  color-copy mb-4">
+                        Work With Us
+                    </h2>
+                    <div class="w-20 h-1 bg-[#E3BA63] mb-10"></div>
+                    <!-- Item -->
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                            <svg width="18" height="18" viewBox="0 0 18 18" role="presentation" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99209 17.8867C7.78424 17.8867 6.62968 17.6557 5.5284 17.1936C4.47449 16.7433 3.53604 16.1064 2.71305 15.2829C1.89005 14.4594 1.25356 13.5204 0.803577 12.4658C0.341752 11.3639 0.11084 10.2086 0.11084 9C0.11084 7.79141 0.341752 6.63613 0.803577 5.53418C1.25356 4.47962 1.89005 3.54059 2.71305 2.71709C3.53604 1.89359 4.47449 1.2567 5.5284 0.806444C6.62968 0.344336 7.78424 0.113281 8.99209 0.113281C10.1999 0.113281 11.3545 0.344336 12.4558 0.806444C13.5097 1.2567 14.4481 1.89359 15.2711 2.71709C16.0941 3.54059 16.7306 4.47962 17.1806 5.53418C17.6424 6.63613 17.8733 7.79141 17.8733 9C17.8733 10.2086 17.6424 11.3639 17.1806 12.4658C16.7306 13.5204 16.0941 14.4594 15.2711 15.2829C14.4481 16.1064 13.5097 16.7433 12.4558 17.1936C11.3545 17.6557 10.1999 17.8867 8.99209 17.8867ZM8.99209 16.1094C10.2828 16.1094 11.4788 15.7835 12.5801 15.1318C13.6459 14.5038 14.4925 13.6566 15.1202 12.5902C15.7714 11.4883 16.0971 10.2915 16.0971 9C16.0971 7.70846 15.7714 6.51172 15.1202 5.40977C14.4925 4.34336 13.6459 3.49616 12.5801 2.86816C11.4788 2.21647 10.2828 1.89062 8.99209 1.89062C7.70135 1.89062 6.50534 2.21647 5.40407 2.86816C4.33832 3.49616 3.49164 4.34336 2.86403 5.40977C2.21274 6.51172 1.88709 7.70846 1.88709 9C1.88709 10.2915 2.21274 11.4883 2.86403 12.5902C3.49164 13.6566 4.33832 14.5038 5.40407 15.1318C6.50534 15.7835 7.70135 16.1094 8.99209 16.1094ZM5.88365 10.7773H10.7683C10.8868 10.7773 10.9904 10.7329 11.0792 10.644C11.168 10.5552 11.2124 10.4515 11.2124 10.333C11.2124 10.2145 11.168 10.1108 11.0792 10.022C10.9904 9.9331 10.8868 9.88867 10.7683 9.88867H7.21584C6.81322 9.88867 6.44317 9.78796 6.10568 9.58652C5.7682 9.38509 5.4988 9.11553 5.29749 8.77783C5.09618 8.44014 4.99553 8.06986 4.99553 7.66699C4.99553 7.26413 5.09618 6.89385 5.29749 6.55615C5.4988 6.21846 5.7682 5.94889 6.10568 5.74746C6.44317 5.54603 6.81322 5.44531 7.21584 5.44531H8.10397V3.66797H9.88022V5.44531H12.1005V7.22266H7.21584C7.09742 7.22266 6.99381 7.26709 6.905 7.35596C6.81618 7.44482 6.77178 7.5485 6.77178 7.66699C6.77178 7.78548 6.81618 7.88916 6.905 7.97803C6.99381 8.06689 7.09742 8.11133 7.21584 8.11133H10.7683C11.171 8.11133 11.541 8.21204 11.8785 8.41348C12.216 8.61491 12.4854 8.88447 12.6867 9.22217C12.888 9.55986 12.9887 9.93014 12.9887 10.333C12.9887 10.7359 12.888 11.1062 12.6867 11.4438C12.4854 11.7815 12.216 12.0511 11.8785 12.2525C11.541 12.454 11.171 12.5547 10.7683 12.5547H9.88022V14.332H8.10397V12.5547H5.88365V10.7773Z" fill="white"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold color-copy">Price</h3>
+                            <p class="color-copy font-['Hanken_Grotesk',sans-serif]">
+                                Typical acquisitions range from $250k to $5 million+.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                            <svg width="20" height="16" role="presentation" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.9852 14.2207H19.7614V15.998H0.222656V14.2207H1.99891V0.890624C1.99891 0.641796 2.08476 0.431478 2.25646 0.259667C2.42817 0.0878572 2.63836 0.00195217 2.88703 0.00195217H11.7683C12.017 0.00195217 12.2271 0.0878572 12.3988 0.259667C12.5706 0.431478 12.6564 0.641796 12.6564 0.890624V14.2207H16.2089V7.11133H14.4327V5.33398H17.097C17.3457 5.33398 17.5559 5.41989 17.7276 5.5917C17.8993 5.76351 17.9852 5.97383 17.9852 6.22266V14.2207ZM3.77516 1.7793V14.2207H10.8802V1.7793H3.77516ZM5.55141 7.11133H9.10391V8.88867H5.55141V7.11133ZM5.55141 3.55664H9.10391V5.33398H5.55141V3.55664Z" fill="white"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold color-copy">Type</h3>
+                            <p class="color-copy font-['Hanken_Grotesk',sans-serif]">
+                                Hospitality, Real Estate, Insurance, Technology and Retail.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                            <svg width="16" height="20" role="presentation" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99215 17.1448L12.3795 12.737C13.1847 11.9431 13.7294 11.0071 14.0136 9.92881C14.286 8.87425 14.286 7.81969 14.0136 6.76514C13.7294 5.68688 13.1877 4.74785 12.3884 3.94805C11.5891 3.14824 10.6506 2.60615 9.57301 2.32178C8.5191 2.04925 7.46519 2.04925 6.41129 2.32178C5.33369 2.60615 4.39524 3.14824 3.59593 3.94805C2.79662 4.74785 2.25486 5.68688 1.97066 6.76514C1.6983 7.81969 1.6983 8.87425 1.97066 9.92881C2.25486 11.0071 2.79958 11.9431 3.60481 12.737L7.99215 17.1448ZM7.99215 19.6509L2.34367 13.9989C1.31345 12.9799 0.620711 11.7713 0.265461 10.3731C-0.0897891 9.02236 -0.0897891 7.67158 0.265461 6.3208C0.620711 4.92262 1.31049 3.71107 2.33479 2.68613C3.3591 1.6612 4.56991 0.965071 5.96722 0.597754C7.31717 0.254133 8.66712 0.254133 10.0171 0.597754C11.4144 0.965071 12.6252 1.6612 13.6495 2.68613C14.6738 3.71107 15.3636 4.92262 15.7188 6.3208C16.0741 7.67158 16.0741 9.02236 15.7188 10.3731C15.3636 11.7713 14.6708 12.9799 13.6406 13.9989L7.99215 19.6509ZM7.99215 10.1243C8.31187 10.1243 8.60792 10.0443 8.88027 9.88437C9.15263 9.72441 9.36874 9.50817 9.52861 9.23564C9.68847 8.96312 9.7684 8.66689 9.7684 8.34697C9.7684 8.02705 9.68847 7.73083 9.52861 7.4583C9.36874 7.18577 9.15263 6.96953 8.88027 6.80957C8.60792 6.64961 8.31187 6.56963 7.99215 6.56963C7.67242 6.56963 7.37638 6.64961 7.10402 6.80957C6.83167 6.96953 6.61555 7.18577 6.45569 7.4583C6.29583 7.73083 6.2159 8.02705 6.2159 8.34697C6.2159 8.66689 6.29583 8.96312 6.45569 9.23564C6.61555 9.50817 6.83167 9.72441 7.10402 9.88437C7.37638 10.0443 7.67242 10.1243 7.99215 10.1243ZM7.99215 11.9017C7.3527 11.9017 6.76062 11.7417 6.2159 11.4218C5.67118 11.1019 5.23896 10.6694 4.91924 10.1243C4.59951 9.57926 4.43965 8.98385 4.43965 8.33809C4.43965 7.69232 4.59951 7.09987 4.91924 6.56074C5.23896 6.02161 5.67118 5.59209 6.2159 5.27217C6.76062 4.95225 7.3527 4.79228 7.99215 4.79228C8.6316 4.79228 9.22368 4.95225 9.7684 5.27217C10.3131 5.59209 10.7453 6.02161 11.0651 6.56074C11.3848 7.09987 11.5446 7.69232 11.5446 8.33809C11.5446 8.98385 11.3848 9.57926 11.0651 10.1243C10.7453 10.6694 10.3131 11.1019 9.7684 11.4218C9.22368 11.7417 8.6316 11.9017 7.99215 11.9017Z" fill="white"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold color-copy">Location</h3>
+                            <p class="color-copy font-['Hanken_Grotesk',sans-serif]">
+                                Westchester, New York City and Fairfield County, Connecticut with an emphasis on desirable neighborhoods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column -->
+                <div class="w-full h-auto">
+                    <img src="work-with-trion-holdings.webp" alt="Work with Trion Holdings" class="w-full object-cover" loading="lazy" decoding="async" width="950" height="634" />
+                </div>
+            </div>
+        </section>
+        
+        <!-- Two-Tone Section Separator -->
+        <div class="w-full overflow-hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" role="presentation" fill="none" viewBox="0 0 1512 153"><path fill="#fff" d="M0 8h1512v145H0z"/><path fill="#CD962B" d="M800.5 46 1512 6v139L800.5 46Z"/><path fill="#F4F3F3" d="M0 11.917V0h1512v11.917L327 72 0 11.917Z"/></svg>
+        </div>
+
+        <!-- Leadership Section -->
+        <section class="px-4 py-20 bg-white color-copy">
+            <div class=" max-width mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl ">
+                        Leadership
+                    </h2>
+                    <div class="w-20 h-1 bg-[#E3BA63] mt-4 mx-auto"></div>
+                </div>
+            
+                <!-- Content Grid -->
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Headshot -->
+                    <div class="flex justify-center md:justify-start">
+                        <img src="carmelo-milio-trion-holdings-v1.webp" alt="Carmelo Milio, CEO Trion Holdings" class="max-w-xs w-full object-cover" loading="lazy" decoding="async" width="625" height="625"/>
+                    </div>
+
+                    <!-- Bio Content -->
+                    <div class="space-y-6  text-sm sm:text-base leading-relaxed">
+                        <div>
+                            <h3 class="text-2xl font-semibold headline-font-family">Carmelo Milio, CEO</h3>
+                            <p class="text-[#E3BA63] mt-1">Chief Executive Officer</p>
+                        </div>
+                
+                        <!-- Experience -->
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold mb-3">Professional Experience</h4>
+                            <p class="font-semibold mb-0 leading-4">Trion Holdings LLC, CEO & Founder</p>
+                            <p class="text-gray-500 text-sm mt-0">2015 - Present</p>
+                            <p class="leading-5 mt-2">
+                                Founded Trion Holdings as a platform for acquiring diversified investments and value-add real estate properties in New York City and the Tri-State.
+                            </p>
+                        </div>
+
+                        <!-- Past Partnerships -->
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold mb-3">Past Five Partnerships and/or Acquisitions</h4>
+                            <ul class="space-y-4">
+                                <li>
+                                    <p class="font-semibold mb-0 leading-4">Airbnb: Single Family Home Investment</p>
+                                    <p class="text-gray-500 text-sm mt-0">2022 – Real Estate</p>
+                                </li>
+                                <li>
+                                    <p class="font-semibold mb-0 leading-4">Commercial Real Estate Acquisition</p>
+                                    <p class="text-gray-500 text-sm mt-0">2021 – Real Estate</p>
+                                </li>
+                                <li>
+                                    <p class="font-semibold mb-0 leading-4">Silver Sands Motel and Restaurant</p>
+                                    <p class="text-gray-500 text-sm mt-0">2021 – Hospitality/Real Estate</p>
+                                </li>
+                                <li>
+                                    <p class="font-semibold mb-0 leading-4">The Taco Project</p>
+                                    <p class="text-gray-500 text-sm mt-0">2018 – Hospitality/QSR</p>
+                                </li>
+                                <li>
+                                    <p class="font-semibold mb-0 leading-4">Gipper, Inc. and CredReady, Inc.</p>
+                                    <p class="text-gray-500 text-sm mt-0">2016 – Technology Start-Ups</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold mb-3">Education</h4>
+                            <div>
+                                <p class="font-semibold mb-0 leading-4">Pace University Lubin School of Business</p>
+                                <p class="text-gray-600 text-sm leading-5">BA in Business Administration</p>
+                                <p class="text-gray-500 text-sm">1998–2002</p>
+                            </div>
+                        </div>
+
+				        <!-- Community & Memberships -->
+                        <div class="border-t border-gray-200 pt-4">
+                            <h4 class="font-semibold mb-4">Community &amp; Memberships</h4>
+                            <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                                <div class="flex items-start gap-2">
+                                    <span class="text-[#E3BA63] text-lg">✓</span>
+                                    <p><a href="https://thebcw.org/" target="_blank" rel="noopener nofollow">Business Council of Westchester</a></p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-[#E3BA63] text-lg">✓</span>
+                                    <p>Advisory Board Member of Community Housing Improvement Program (CHIP)</p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-[#E3BA63] text-lg">✓</span>
+                                    <p>Member of the National Association of REALTORS</p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-[#E3BA63] text-lg">✓</span>
+                                    <p>Past President and Trustee of the Building &amp; Realtors Institute (BRI)</p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="text-[#E3BA63] text-lg">✓</span>
+                                    <p>Certified Property Manager (CPM<sup>&reg;</sup>)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</section>
+
+
+    <!-- Section Separator -->
+    <div class="w-full overflow-hidden -mb-[2px]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="presentation" preserveAspectRatio="none" viewBox="0 0 682 50" class="w-full aspect-[682/50]"><path fill="#1A1919" d="M0 44.796h224.176L682 0v50H0v-5.204Z"/></svg>
+    </div>
+    <footer class="bg-[#1A1919] text-white px-4 py-12">
+        <div class="max-width mx-auto grid grid-cols-12 gap-8 text-sm">
+
+            <!-- Phone Numbers (5 cols) -->
+            <div class="col-span-12 xs:col-span-6 sm:col-span-4 flex gap-4 items-start">
+                <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                    <svg width="20" height="20" role="presentation" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6488 14.1112C11.8347 14.1966 12.0441 14.2161 12.2425 14.1665C12.441 14.1169 12.6166 14.0012 12.7405 13.8385L13.06 13.42C13.2277 13.1964 13.4451 13.015 13.695 12.89C13.945 12.7651 14.2206 12.7 14.5 12.7H17.2C17.6774 12.7 18.1352 12.8896 18.4728 13.2272C18.8104 13.5648 19 14.0226 19 14.5V17.2C19 17.6774 18.8104 18.1352 18.4728 18.4728C18.1352 18.8104 17.6774 19 17.2 19C12.9035 19 8.78296 17.2932 5.74487 14.2551C2.70678 11.217 1 7.09651 1 2.8C1 2.32261 1.18964 1.86477 1.52721 1.52721C1.86477 1.18964 2.32261 1 2.8 1H5.5C5.97739 1 6.43523 1.18964 6.77279 1.52721C7.11036 1.86477 7.3 2.32261 7.3 2.8V5.5C7.3 5.77944 7.23494 6.05504 7.10997 6.30498C6.985 6.55492 6.80355 6.77234 6.58 6.94L6.1588 7.2559C5.99357 7.38206 5.87712 7.56153 5.82921 7.76381C5.78131 7.9661 5.8049 8.17874 5.896 8.3656C7.12601 10.8639 9.14898 12.8843 11.6488 14.1112Z" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
+
+
+                <div>
+                <p>Yonkers: (914) 964-1100</p>
+                <p>New York City: (212) 245-1980</p>
+                <p>24/7 Emergency: (914) 729-1407</p>
+                </div>
+            </div>
+
+            <!-- Address 1 (4 cols) -->
+            <div class="col-span-12 xs:col-span-6 sm:col-span-4 flex gap-4 items-start">
+                <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99215 17.1448L12.3795 12.737C13.1847 11.9431 13.7294 11.0071 14.0136 9.92881C14.286 8.87425 14.286 7.81969 14.0136 6.76514C13.7294 5.68688 13.1877 4.74785 12.3884 3.94805C11.5891 3.14824 10.6506 2.60615 9.57301 2.32178C8.5191 2.04925 7.46519 2.04925 6.41129 2.32178C5.33369 2.60615 4.39524 3.14824 3.59593 3.94805C2.79662 4.74785 2.25486 5.68688 1.97066 6.76514C1.6983 7.81969 1.6983 8.87425 1.97066 9.92881C2.25486 11.0071 2.79958 11.9431 3.60481 12.737L7.99215 17.1448ZM7.99215 19.6509L2.34367 13.9989C1.31345 12.9799 0.620711 11.7713 0.265461 10.3731C-0.0897891 9.02236 -0.0897891 7.67158 0.265461 6.3208C0.620711 4.92262 1.31049 3.71107 2.33479 2.68613C3.3591 1.6612 4.56991 0.965071 5.96722 0.597754C7.31717 0.254133 8.66712 0.254133 10.0171 0.597754C11.4144 0.965071 12.6252 1.6612 13.6495 2.68613C14.6738 3.71107 15.3636 4.92262 15.7188 6.3208C16.0741 7.67158 16.0741 9.02236 15.7188 10.3731C15.3636 11.7713 14.6708 12.9799 13.6406 13.9989L7.99215 19.6509ZM7.99215 10.1243C8.31187 10.1243 8.60792 10.0443 8.88027 9.88437C9.15263 9.72441 9.36874 9.50817 9.52861 9.23564C9.68847 8.96312 9.7684 8.66689 9.7684 8.34697C9.7684 8.02705 9.68847 7.73083 9.52861 7.4583C9.36874 7.18577 9.15263 6.96953 8.88027 6.80957C8.60792 6.64961 8.31187 6.56963 7.99215 6.56963C7.67242 6.56963 7.37638 6.64961 7.10402 6.80957C6.83167 6.96953 6.61555 7.18577 6.45569 7.4583C6.29583 7.73083 6.2159 8.02705 6.2159 8.34697C6.2159 8.66689 6.29583 8.96312 6.45569 9.23564C6.61555 9.50817 6.83167 9.72441 7.10402 9.88437C7.37638 10.0443 7.67242 10.1243 7.99215 10.1243ZM7.99215 11.9017C7.3527 11.9017 6.76062 11.7417 6.2159 11.4218C5.67118 11.1019 5.23896 10.6694 4.91924 10.1243C4.59951 9.57926 4.43965 8.98385 4.43965 8.33809C4.43965 7.69232 4.59951 7.09987 4.91924 6.56074C5.23896 6.02161 5.67118 5.59209 6.2159 5.27217C6.76062 4.95225 7.3527 4.79228 7.99215 4.79228C8.6316 4.79228 9.22368 4.95225 9.7684 5.27217C10.3131 5.59209 10.7453 6.02161 11.0651 6.56074C11.3848 7.09987 11.5446 7.69232 11.5446 8.33809C11.5446 8.98385 11.3848 9.57926 11.0651 10.1243C10.7453 10.6694 10.3131 11.1019 9.7684 11.4218C9.22368 11.7417 8.6316 11.9017 7.99215 11.9017Z" fill="white"></path></svg>
+                </div>
+                <div>
+                <p>829 Midland Ave.<br>Yonkers, NY 10704</p>
+                </div>
+            </div>
+
+            <!-- Address 2 (3 cols) -->
+            <div class="col-span-12 xs:col-span-6 sm:col-span-4 flex gap-4 items-start">
+                <div class="bg-[#E3BA63] rounded-full w-10 h-10 flex items-center justify-center shrink-0">
+                <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99215 17.1448L12.3795 12.737C13.1847 11.9431 13.7294 11.0071 14.0136 9.92881C14.286 8.87425 14.286 7.81969 14.0136 6.76514C13.7294 5.68688 13.1877 4.74785 12.3884 3.94805C11.5891 3.14824 10.6506 2.60615 9.57301 2.32178C8.5191 2.04925 7.46519 2.04925 6.41129 2.32178C5.33369 2.60615 4.39524 3.14824 3.59593 3.94805C2.79662 4.74785 2.25486 5.68688 1.97066 6.76514C1.6983 7.81969 1.6983 8.87425 1.97066 9.92881C2.25486 11.0071 2.79958 11.9431 3.60481 12.737L7.99215 17.1448ZM7.99215 19.6509L2.34367 13.9989C1.31345 12.9799 0.620711 11.7713 0.265461 10.3731C-0.0897891 9.02236 -0.0897891 7.67158 0.265461 6.3208C0.620711 4.92262 1.31049 3.71107 2.33479 2.68613C3.3591 1.6612 4.56991 0.965071 5.96722 0.597754C7.31717 0.254133 8.66712 0.254133 10.0171 0.597754C11.4144 0.965071 12.6252 1.6612 13.6495 2.68613C14.6738 3.71107 15.3636 4.92262 15.7188 6.3208C16.0741 7.67158 16.0741 9.02236 15.7188 10.3731C15.3636 11.7713 14.6708 12.9799 13.6406 13.9989L7.99215 19.6509ZM7.99215 10.1243C8.31187 10.1243 8.60792 10.0443 8.88027 9.88437C9.15263 9.72441 9.36874 9.50817 9.52861 9.23564C9.68847 8.96312 9.7684 8.66689 9.7684 8.34697C9.7684 8.02705 9.68847 7.73083 9.52861 7.4583C9.36874 7.18577 9.15263 6.96953 8.88027 6.80957C8.60792 6.64961 8.31187 6.56963 7.99215 6.56963C7.67242 6.56963 7.37638 6.64961 7.10402 6.80957C6.83167 6.96953 6.61555 7.18577 6.45569 7.4583C6.29583 7.73083 6.2159 8.02705 6.2159 8.34697C6.2159 8.66689 6.29583 8.96312 6.45569 9.23564C6.61555 9.50817 6.83167 9.72441 7.10402 9.88437C7.37638 10.0443 7.67242 10.1243 7.99215 10.1243ZM7.99215 11.9017C7.3527 11.9017 6.76062 11.7417 6.2159 11.4218C5.67118 11.1019 5.23896 10.6694 4.91924 10.1243C4.59951 9.57926 4.43965 8.98385 4.43965 8.33809C4.43965 7.69232 4.59951 7.09987 4.91924 6.56074C5.23896 6.02161 5.67118 5.59209 6.2159 5.27217C6.76062 4.95225 7.3527 4.79228 7.99215 4.79228C8.6316 4.79228 9.22368 4.95225 9.7684 5.27217C10.3131 5.59209 10.7453 6.02161 11.0651 6.56074C11.3848 7.09987 11.5446 7.69232 11.5446 8.33809C11.5446 8.98385 11.3848 9.57926 11.0651 10.1243C10.7453 10.6694 10.3131 11.1019 9.7684 11.4218C9.22368 11.7417 8.6316 11.9017 7.99215 11.9017Z" fill="white"></path></svg>
+                </div>
+                <div>
+                <p>165 W 127th St.<br>Ste. 101<br>New York, NY 10027</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom copyright -->
+        <div class="text-center mt-10 text-sm">
+        <p>
+            &copy; Trion Holdings <span id="year">2025</span> | All Rights Reserved |
+            <button onclick="document.getElementById('privacyModal').classList.remove('hidden')" class="underline hover:text-[#E3BA63]">
+            Privacy Policy
+            </button>
+        </p>
+        </div>
+    </footer>
+
+    <script>
+      // small script to set footer year and manage splash screen similar to original
+      document.addEventListener('DOMContentLoaded', () => {
+        const splashScreen = document.getElementById('splash-screen');
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.innerHTML = new Date().getFullYear();
+        if (splashScreen) {
+          setTimeout(() => { splashScreen.classList.add('hidden'); }, 2600);
+        }
+      });
+    </script>
+  </main>
+</Base>

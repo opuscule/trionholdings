@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+const { title = 'Trion Holdings' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6KCBEGBJ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-B6KCBEGBJ7');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+    <!-- global styles imported via src/styles/global.css -->
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
