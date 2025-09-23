@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --trion-ink: #1A1919;
+  --trion-gold: #C69A40;
+  --trion-gold-2: #E3BA63;
+  --trion-ink-05: rgba(26,25,25,0.05);
+}
+
+@font-face {
+  font-family: 'ClashDisplay-Variable';
+  src: url('/ClashDisplay-Variable.woff2') format('woff2 supports variations'),
+       url('/ClashDisplay-Variable.woff2') format('woff2-variations'),
+       url('/ClashDisplay-Variable.woff') format('woff supports variations'),
+       url('/ClashDisplay-Variable.woff') format('woff-variations');
+  font-weight: 600;
+  font-display: swap;
+}
+
+.max-width { max-width: 78.25rem; }
+.copy-color { color: var(--trion-ink); }
+h1,h2,h3,h4,h5,h6,.loading_text { font-family: 'ClashDisplay-Variable', sans-serif; font-weight:600; }
+p, li, a { font-family: "Hanken Grotesk", sans-serif; font-optical-sizing: auto; font-weight:400; font-style:normal; }
+.top-design { position: absolute; aspect-ratio: 716 / 155; top:-2px; left: 0; }
+
+/* Desktop width override: ~45% width at md and up */
+@media (min-width: 768px) {
+  .top-design { width: 45%; }
+}
+
+/* Nav overlay helpers */
+/* site-nav container holds backdrop + sliding aside */
+/* Keep the element present so we can animate opacity/visibility (override Tailwind .hidden for this id) */
+#site-nav { display: block; opacity: 0; visibility: hidden; transition: opacity 320ms cubic-bezier(.2,.8,.2,1); }
+/* keep the element present so transitions run; use .open for visible, and .closing while hiding */
+#site-nav.hidden { /* override tailwind's .hidden display:none */ display: block; opacity: 0; visibility: hidden; pointer-events: none; }
+#site-nav.open { opacity: 1; visibility: visible; pointer-events: auto; }
+#site-nav.closing { /* when closing, keep it visible but let opacity transition down; pointer-events none to avoid interactions */
+  opacity: 0; visibility: visible; pointer-events: none;
+}
+
+/* Backdrop button covers the viewport; clicking it should close the nav */
+#site-nav-backdrop { border: 0; opacity: 0; transition: opacity 320ms cubic-bezier(.2,.8,.2,1); }
+#site-nav.open #site-nav-backdrop { opacity: 1; }
+
+/* Sliding aside defaults off-screen to the left, then transitions in */
+aside[role="dialog"] { transition: transform 320ms cubic-bezier(.2,.8,.2,1); will-change: transform; }
+#site-nav.open aside[role="dialog"] { transform: translateX(0); }
+#site-nav:not(.open) aside[role="dialog"] { transform: translateX(-100%); }
+
+
+/* Hamburger appearance (static) */
+#nav-toggle { color: var(--trion-ink); }
+/* keep bars visually stable; no rotation/transform on open */
+#nav-toggle .bar { transition: opacity 150ms ease; }
+#nav-toggle.open .bar2 { opacity: 0.9; }

@@ -1,0 +1,1 @@
+import"./hoisted.Dk7J7dCi.js";document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("splash-screen"),t=document.getElementById("year");t&&(t.textContent=String(new Date().getFullYear())),e&&setTimeout(()=>{e.classList.add("hidden")},2600)});
