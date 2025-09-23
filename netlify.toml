@@ -1,13 +1,2 @@
 [build]
   publish = "public"
-
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Alternative: to set headers for specific font types
-[[headers]]
-  for = "/fonts/*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
