@@ -1,7 +1,0 @@
-/*
-  Serve long-lived cache headers for font files under /fonts/
-  Note: This file is supported by Netlify (/_headers) and some static hosts.
-  It instructs browsers to cache fonts for 1 year and mark them immutable.
-*/
-/*/fonts/*
-  /*Cache-Control: public, max-age=31536000, immutable */
