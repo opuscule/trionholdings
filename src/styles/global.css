@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,21 +10,72 @@
   --trion-ink-05: rgba(26,25,25,0.05);
 }
 
+/* Enforce a comfortable minimum font size across the site */
+html {
+  /* Set base font size to 16px so 1rem == 16px */
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%; /* prevent iOS from scaling text smaller */
+}
+
+body {
+  font-size: 1rem; /* ensure body text is at least 16px */
+}
+
 @font-face {
   font-family: 'ClashDisplay-Variable';
-  src: url('/ClashDisplay-Variable.woff2') format('woff2 supports variations'),
-       url('/ClashDisplay-Variable.woff2') format('woff2-variations'),
-       url('/ClashDisplay-Variable.woff') format('woff supports variations'),
-       url('/ClashDisplay-Variable.woff') format('woff-variations');
+  src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2 supports variations'),
+       url('/fonts/ClashDisplay-Variable.woff2') format('woff2-variations'),
+       url('/fonts/ClashDisplay-Variable.woff') format('woff supports variations'),
+       url('/fonts/ClashDisplay-Variable.woff') format('woff-variations');
   font-weight: 600;
   font-display: swap;
 }
 
+/* Base body font: use Hanken Grotesk for all body copy */
+body, html {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .max-width { max-width: 78.25rem; }
 .copy-color { color: var(--trion-ink); }
+p, li, a { font-family: "Hanken Grotesk", sans-serif; font-optical-sizing: auto; font-weight:400; font-style:normal; }
+
 h1,h2,h3,h4,h5,h6,.loading_text { font-family: 'ClashDisplay-Variable', sans-serif; font-weight:600; }
 p, li, a { font-family: "Hanken Grotesk", sans-serif; font-optical-sizing: auto; font-weight:400; font-style:normal; }
+p, li, a { font-family: "Hanken Grotesk", sans-serif; font-optical-sizing: auto; font-weight:400; font-style:normal; }
 .top-design { position: absolute; aspect-ratio: 716 / 155; top:-2px; left: 0; }
+
+/* Ensure form controls do not render smaller than the base font-size */
+input, button, textarea, select, label {
+  font-size: 1rem;
+}
+
+/* Reusable spacing helper for the Leadership section
+   Applies negative margin-bottom and equal padding-bottom to preserve visual overlap
+*/
+.leadership-spacing {
+  /* fallback for environments without Tailwind processing */
+  margin-bottom: -120px;
+  padding-bottom: 120px;
+}
+
+@layer components {
+  /* Use Tailwind utilities where available; smaller overlap on mobile, larger on md+ */
+  .leadership-spacing {
+    @apply -mb-[40px] pb-[40px];
+  }
+
+  @screen md {
+    .leadership-spacing {
+      @apply -mb-[120px] pb-[120px];
+    }
+  }
+}
 
 /* Desktop width override: ~45% width at md and up */
 @media (min-width: 768px) {
