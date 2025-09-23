@@ -55,6 +55,4 @@ aside[role="dialog"] { transition: transform 320ms cubic-bezier(.2,.8,.2,1); wil
 #nav-toggle { color: var(--trion-ink); }
 /* keep bars visually stable; no rotation/transform on open */
 #nav-toggle .bar { transition: opacity 150ms ease; }
-/* no open-state transforms */
 #nav-toggle.open .bar2 { opacity: 0.9; }
-
