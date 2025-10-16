@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-const { title = 'Trion Holdings' } = Astro.props;
+const { title = 'Trion Holdings', description } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -8,6 +8,7 @@ const { title = 'Trion Holdings' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    {description && <meta name="description" content={description} />}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6KCBEGBJ7"></script>
     <script>
       // @ts-nocheck
@@ -33,7 +34,7 @@ const { title = 'Trion Holdings' } = Astro.props;
     <div class="max-width mx-auto absolute inset-x-0 top-0 z-10 bg-transparent">
       <div class="flex place-content-between items-center px-4 sm:px-6 lg:px-8 py-3">
         <a href="/" class="flex items-center">
-          <img src="/trion-holdings-logo.svg" alt="Trion Holdings" class="h-16 sm:h-24 lg:h-36" />
+          <img src="/trion-holdings-logo.svg" alt="Trion Holdings" class="h-24 lg:h-36" />
         </a>
 
         <!-- Desktop Navigation (md and up) -->
