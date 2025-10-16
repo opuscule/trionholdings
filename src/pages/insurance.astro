@@ -117,7 +117,7 @@ import Base from '../layouts/Base.astro';
     </div>
     
     <!-- Contact Section -->
-    <section id="contact" class="px-4">
+    <section id="contact" class="px-4 scroll-mt-24">
         <h2 class="text-4xl font-semibold text-center mb-4 mt-12">Get Started</h2>
         
         <p class="text-center max-w-xl mx-auto mb-12">To learn more about the Trion Holdings Insurance Program or to explore coverage options, please provide the following details:</p>
@@ -126,7 +126,7 @@ import Base from '../layouts/Base.astro';
             <div id="insurance-success" class="hidden mb-6 rounded-md border border-green-200 bg-green-50 text-green-900 px-4 py-3" role="status" aria-live="polite">
                 <strong>Message received.</strong> Someone from our office will get back to you within 2 business days.
             </div>
-            <form class="space-y-6" aria-label="Insurance contact form" name="insurance-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/insurance/?success=true">
+            <form class="space-y-6" aria-label="Insurance contact form" name="insurance-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/insurance/?success=true#contact">
                 <input type="hidden" name="form-name" value="insurance-contact" />
                 <!-- honeypot -->
                 <input type="hidden" name="bot-field" />
@@ -231,8 +231,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (params.get('success') === 'true'){
         const successBox = document.getElementById('insurance-success');
         const form = document.querySelector('form[name="insurance-contact"]');
-        if (successBox) successBox.classList.remove('hidden');
+        if (successBox) {
+            successBox.classList.remove('hidden');
+            // Ensure it is reachable by focus then focus it for screen readers
+            successBox.setAttribute('tabindex', '-1');
+        }
         if (form) form.classList.add('hidden');
+        // Scroll into view of the contact section/success box
+        const contact = document.getElementById('contact');
+        const target = successBox || contact;
+        if (target && typeof target.scrollIntoView === 'function') {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        // After a brief delay, move focus to the success box for accessibility
+        if (successBox && typeof successBox.focus === 'function') {
+            setTimeout(() => successBox.focus(), 300);
+        }
     }
 });
 </script>
