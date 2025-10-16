@@ -108,3 +108,24 @@ aside[role="dialog"] { transition: transform 320ms cubic-bezier(.2,.8,.2,1); wil
 /* keep bars visually stable; no rotation/transform on open */
 #nav-toggle .bar { transition: opacity 150ms ease; }
 #nav-toggle.open .bar2 { opacity: 0.9; }
+
+/* --- Stacked cards helpers --- */
+.stack-card, .card {
+  transition: transform 200ms ease, opacity 200ms ease;
+  border-radius: 0.5rem; /* visually match rounded-lg */
+}
+.stack-section { min-height: 1px; /* legacy helper, safe to keep */ }
+
+/* CodePen-like container and sizing */
+#stacked-cards .cards {
+  /* CSS vars so JS can set --cards-count and --card-height if needed */
+  --cards-count: 2;
+  --card-gap: 20px; /* visual offset between cards */
+  position: relative;
+  /* The height is card height plus gap per extra card to allow pushing */
+  min-height: calc(var(--card-height, 1200px) + (var(--cards-count) - 1) * var(--card-gap));
+}
+
+#stacked-cards .card {
+  top: 0; /* match CodePen */
+}
